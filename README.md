@@ -10,5 +10,5 @@ So far so good.
 2. Create `config.py` in the root folder. 
 3. The only line you need in there is `api_key = "[KEY]"`. 
 4. Replace `[KEY]` with your OpenAi API key.
-5. Enter `streamlit run ./streamlit_main.py` into your console.
+5. Enter `streamlit run ./main.py` into your console.
 
