@@ -7,15 +7,30 @@ import openai
 API_KEY = api_key
 
 # webapp class
-class web_app:
-    def __init__(self, description="Description", button_text="Submit", placeholder=""):
+class web_app():
+    def __init__(self, engine,description="Description", button_text="Submit", placeholder=""):
         self.btn_txt = button_text
         self.desc = description
         self.set_openai_key(API_KEY)
         self.placeholder = placeholder
+        self.engine = engine
+        st.markdown(
+            """
+    <style>
+    [data-testid="stSidebar"][aria-expanded="true"] > div:first-child {
+        width: 250px;
+    }
+    [data-testid="stSidebar"][aria-expanded="false"] > div:first-child {
+        width: 250px;
+        margin-left: -250px;
+    }
+    </style>
+    """,
+            unsafe_allow_html=True,
+        )
 
     def run(self, gpt):
-        st.title("OpenAi's text-davinci-001")
+        st.title("OpenAi's "+ self.engine)
         st.write(" ### Input instructions:")
         self.input = st.text_area(self.placeholder)
         self.button = st.button(self.btn_txt)
@@ -31,3 +46,11 @@ class web_app:
     def set_openai_key(self, key):
         # Sets OpenAI key.
         openai.api_key = key
+    
+    def token_box():
+        st.sidebar.number_input(
+        "Number of Tokens:", min_value=5, max_value=2000, value=50)
+    
+    def temp_box():
+        st.sidebar.number_input(
+        "Temperature:", min_value=0.0, max_value=1.0, value=0.5)
