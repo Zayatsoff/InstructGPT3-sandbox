@@ -10,6 +10,7 @@ webapp = web_app(engine=GPT_ENGINE)
 
 # create token and temperatre box
 number_tokens = web_app.token_box()
+print(number_tokens)
 temperature = web_app.temp_box()
 
 # assign gpt
