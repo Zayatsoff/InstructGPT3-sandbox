@@ -1,6 +1,6 @@
 import streamlit as st
 from webapp import web_app
-from api import GPT
+from api.gpt import GPT
 
 webapp = web_app()
 number_tokens = st.sidebar.slider(

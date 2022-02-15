@@ -8,10 +8,11 @@ API_KEY = api_key
 
 # webapp class
 class web_app:
-    def __init__(self, description="Description", button_text="Submit"):
+    def __init__(self, description="Description", button_text="Submit", placeholder=""):
         self.btn_txt = button_text
         self.desc = description
         self.set_openai_key(API_KEY)
+        self.placeholder = placeholder
 
     def run(self, gpt):
         st.title("OpenAi's text-davinci-001")
