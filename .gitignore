@@ -3,3 +3,4 @@ api/__pycache__/gpt.cpython-38.pyc
 __pycache__/webapp.cpython-38.pyc
 __pycache__/config.cpython-38.pyc
 .vscode/settings.json
+config.py
